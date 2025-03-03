@@ -1,0 +1,79 @@
+.logo{
+    display: block;
+    margin: auto;
+    width: 70px;
+    height: 70px;
+}
+.container{
+    max-width: 955px;
+    background-color: red;
+    margin: auto;
+    height: 70vh;
+    padding: 15px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.convo{
+    background-color: rgb(86, 224, 86);        
+    border-radius: 20px;
+    color: black;
+    margin-left: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 5px 5px 5px black;    
+    
+}
+
+.sender{
+    margin-right:auto;
+    position: relative;
+}
+.sender::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-right: 10px solid rgb(86, 224, 86);    
+    border-radius: 10px;
+    left: -8px;
+    top: 50%;        
+}
+.recp{
+    margin-left: auto;
+    position: relative;
+}
+.recp::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid rgb(86, 224, 86);
+    border-top: 9px solid transparent;    
+    border-radius: 10px;
+    right: -8px;
+    top: 50%;
+}
+
+ .left-joined{
+    text-align: center;
+ }
+#send-form{
+    text-align: center;
+    margin: auto;
+    max-width: 955px;
+}
+#message-box{
+    border: solid black;
+    border-radius: 7px;
+    width: 90%;
+    height: 30px;
+}
+.btn{
+    border-radius: 7px;
+    height: 30px;
+    width: 5%;
+}
