@@ -39,8 +39,9 @@ const userName = prompt("Enter Your Name To Join");
 socket.emit('new-user-joined',userName);
 
 socket.on('user-joined', name => {
-    console.log('user joined', name);
-    append(`${name} has joined the chat`,'joined');
+    if(name){
+        append(`${name} has joined the chat`,'joined');
+    }
 });
 
 socket.on('receive', msgObj => {
@@ -48,5 +49,7 @@ socket.on('receive', msgObj => {
 });
 
 socket.on('left', user => {
-    append(`${user} has left the chat`,'disconnected');
+    if(user){        
+        append(`${user} has left the chat`,'disconnected');
+    }
 });
