@@ -1,4 +1,4 @@
-const socket = io('http://localhost:5000');
+// const socket = io('http://localhost:5000');
 
 const form = document.getElementById('send-form');
 const msginput = document.getElementById('message-box');
@@ -19,11 +19,8 @@ const append = (msg, where) => {
         newElement.classList.add(where);
     }
     msgcontainer.append(newElement);
-    
-    if(where == 'recp')
-    {
-        audio.play();
-    }
+    audio.play();
+    msgcontainer.scrollTop = msgcontainer.scrollHeight;
     
 }
 
@@ -36,6 +33,8 @@ form.addEventListener('submit',(e) => {
 })
 
 const userName = prompt("Enter Your Name To Join");
+const socket = io('http://localhost:5000');
+
 socket.emit('new-user-joined',userName);
 
 socket.on('user-joined', name => {
