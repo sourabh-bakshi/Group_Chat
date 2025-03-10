@@ -33,7 +33,7 @@ form.addEventListener('submit',(e) => {
 })
 
 const userName = prompt("Enter Your Name To Join");
-const socket = io('http://localhost:5000');
+const socket = io('http://192.168.1.6:5000');
 
 socket.emit('new-user-joined',userName);
 
