@@ -1,4 +1,3 @@
-// const socket = io('http://localhost:5000');
 
 const form = document.getElementById('send-form');
 const msginput = document.getElementById('message-box');
@@ -33,7 +32,7 @@ form.addEventListener('submit',(e) => {
 })
 
 const userName = prompt("Enter Your Name To Join");
-const socket = io('http://192.168.1.6:5000');
+const socket = io('https://group-chat-backend-byj7.onrender.com');
 
 socket.emit('new-user-joined',userName);
 
