@@ -17,12 +17,27 @@ const users = {};
 
 io.on('connection',socket => {
     socket.on('new-user-joined',name => {
+        console.log(name,'has joined the chat');
         users[socket.id] = name;
         socket.broadcast.emit('user-joined', name);
     });
 
     socket.on('msg-send',msg => {
+        console.log('has joined the chat');
         socket.broadcast.emit('receive', {message: msg, name: users[socket.id]})
+    });
+
+    socket.on('typing',() => {
+        console.log('is typing');
+        if(users[socket.id]){
+            console.log(users[socket.id],'is typing');
+            socket.broadcast.emit('showTyping',users[socket.id]);
+        }
+    });
+
+    socket.on('stopTyping',() => {
+        console.log("stop typing");
+        socket.broadcast.emit('hideTyping');
     });
 
     socket.on('disconnect', () => {
