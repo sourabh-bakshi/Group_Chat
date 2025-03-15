@@ -1,9 +1,10 @@
-const userName = prompt("Enter Your Name To Join");
-const socket = io('https://group-chat-backend-byj7.onrender.com');
+const userName = prompt("Enter Your Name To Join");// prompting user to enter name
+const socket = io('https://group-chat-backend-byj7.onrender.com'); //connecting to backend chat socket.io server
+// const socket = io('http://localhost:5000');
 
-
+//selecting dom elements for user interaction
 const form = document.getElementById('send-form');
-const msginput = document.getElementById('message-box');
+const msginput = document.getElementById('input-box');
 const msgcontainer = document.querySelector('.container');
 const audio = new Audio("msgtone.wav");
 
@@ -39,7 +40,7 @@ const append = (msg, where) => {
         newElement.classList.add(where);
     }
     msgcontainer.append(newElement);
-    audio.play();
+    audio.play().catch(err => console.log(err));
     msgcontainer.scrollTop = msgcontainer.scrollHeight;
     
 }

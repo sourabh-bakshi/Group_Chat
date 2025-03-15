@@ -1,12 +1,16 @@
+body {
+    background-color: black;
+    }
 .logo{
-    display: block;
+    width: 80px;
+    height: 80px;
     margin: auto;
-    width: 70px;
-    height: 70px;
+    display: block;
+    border-radius: 30%;         
 }
+
 .container{
     max-width: 970px;
-    background-color: red;
     margin: auto;
     height: 70vh;
     padding: 15px;
@@ -18,8 +22,22 @@
     border-radius: 70px;
     position: relative;
 }
+.container::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 70px;
+    z-index: -1;
+    opacity: 23%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../backgroundImage.jpg');
+}
 .convo{
-    background-color: rgb(86, 224, 86);        
+    background-color: rgb(86, 224, 86);     
     border-radius: 20px;
     color: black;
     margin-left: 20px;
@@ -115,20 +133,29 @@
 
  .left-joined{
     text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
  }
 #send-form{
     text-align: center;
     margin: auto;
     max-width: 955px;
+    display: flex;
+    justify-content: center;    
 }
-#message-box{
+#input-box{
     border: solid black;
     border-radius: 7px;
     width: 90%;
     height: 30px;
+    margin: auto;
 }
 .btn{
     border-radius: 7px;
     height: 30px;
-    width: 5%;
+    width: 5%;        
+}
+img{
+    width: 100%;
+    height: 100%;    
 }
